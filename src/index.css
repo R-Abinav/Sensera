@@ -131,3 +131,13 @@
     scroll-behavior: smooth;
   }
 }
+
+/* 
+  Mobile Blocker Scroll Lock
+  Hides overflow on body if screen width < 768px
+*/
+@media (max-width: 767px) {
+  body {
+    overflow: hidden;
+  }
+}
