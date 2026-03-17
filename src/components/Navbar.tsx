@@ -11,6 +11,7 @@ export function Navbar() {
         <a href="#problem" className="text-foreground/80 hover:text-white transition-colors">Problem</a>
         <a href="#solution" className="text-foreground/80 hover:text-white transition-colors">Solution</a>
         <a href="#timeline" className="text-foreground/80 hover:text-white transition-colors">Timeline</a>
+        <a href="#team" className="text-foreground/80 hover:text-white transition-colors">Team</a>
       </div>
       <div>
         <Button variant="default" className="rounded-full shadow-lg shadow-blue-500/20 hover:bg-white hover:text-black hover:scale-105 transition-all duration-300">Contact Us</Button>

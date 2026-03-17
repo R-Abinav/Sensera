@@ -120,6 +120,10 @@
     background-color: var(--background);
     color: var(--foreground);
     min-height: 100vh;
+    cursor: none;
+  }
+  a, button, [role="button"] {
+    cursor: none !important;
   }
   html {
     font-family: var(--font-sans);
