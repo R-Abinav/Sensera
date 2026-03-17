@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource/bricolage-grotesque";
 
 @layer base {
   :root {
@@ -36,7 +36,7 @@
     --sidebar-accent: oklch(0.97 0 0);
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0)
+    --sidebar-ring: oklch(0.708 0 0);
   }
   .dark {
     --background: oklch(0.15 0.05 260);
@@ -69,10 +69,10 @@
     --sidebar-accent: oklch(0.269 0 0);
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0)
+    --sidebar-ring: oklch(0.556 0 0);
   }
   .theme {
-    --font-sans: 'Bricolage Grotesque', sans-serif
+    --font-sans: "Cormorant Garamond", serif;
   }
 }
 
@@ -98,21 +98,26 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  
+
   --animate-aurora: aurora 60s linear infinite;
-  
+
   @keyframes aurora {
     from {
-      background-position: 50% 50%, 50% 50%;
+      background-position:
+        50% 50%,
+        50% 50%;
     }
     to {
-      background-position: 350% 50%, 350% 50%;
+      background-position:
+        350% 50%,
+        350% 50%;
     }
   }
 }
 
 @layer base {
   * {
+    font-family: "Cormorant Garamond", serif !important;
     border-color: var(--border);
     outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
   }

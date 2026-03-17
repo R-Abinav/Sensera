@@ -4,6 +4,7 @@ import { Problem } from "./components/Problem";
 import { Solution } from "./components/Solution";
 import { Timeline } from "./components/Timeline";
 import { Team } from "./components/Team";
+import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { AuroraBackground } from "./components/ui/AuroraBackground";
 
@@ -17,6 +18,7 @@ function App() {
         <Solution />
         <Timeline />
         <Team />
+        <Contact />
       </main>
       <Footer />
     </AuroraBackground>

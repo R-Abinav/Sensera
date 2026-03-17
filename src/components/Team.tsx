@@ -70,7 +70,7 @@ export function Team() {
           viewport={{ once: true }}
           className="space-y-4 text-center px-6 pt-32"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white uppercase">
             Meet the Team
           </h2>
           <p className="text-xl md:text-2xl text-white/80 w-full max-w-3xl mx-auto">
@@ -103,7 +103,7 @@ export function Team() {
                         className="object-cover w-full h-full relative z-10 transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
-                      <span className="text-8xl font-black text-white/50 relative z-10">
+                      <span className="text-8xl font-bold text-white/50 relative z-10">
                         {member.name.charAt(12)}
                       </span>
                     )}
@@ -123,13 +123,13 @@ export function Team() {
                   <div
                     className={`space-y-3 text-center ${index % 2 !== 0 ? "md:text-left" : "md:text-left"} flex-1 overflow-hidden`}
                   >
-                    <h3 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] font-black tracking-tighter text-white uppercase leading-none whitespace-nowrap overflow-hidden text-ellipsis">
+                    <h3 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] font-bold tracking-tighter text-white uppercase leading-none whitespace-nowrap overflow-hidden text-ellipsis">
                       {member.name}
                     </h3>
                     <p className="text-sm md:text-base text-white/50 font-bold uppercase tracking-[0.2em] opacity-80">
                       {member.role}
                     </p>
-                    <p className="text-xl md:text-3xl text-white/80 leading-relaxed max-w-3xl mt-6 font-medium">
+                    <p className="text-xl md:text-3xl text-white/80 leading-relaxed max-w-3xl mt-6 font-normal">
                       {member.bio}
                     </p>
                   </div>

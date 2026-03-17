@@ -19,7 +19,7 @@ export function Navbar() {
         </div>
 
         {/* Links (Center) */}
-        <div className="hidden md:flex items-center gap-8 text-[14px] font-medium tracking-wide">
+        <div className="hidden md:flex items-center gap-8 text-[15px] font-normal tracking-wide">
           <a
             href="#problem"
             className="text-white hover:text-white/70 transition-colors"
@@ -48,7 +48,14 @@ export function Navbar() {
 
         {/* CTA (Right) */}
         <div className="shrink-0 flex items-center">
-          <Button className="h-9 px-6 rounded-md text-[11px] font-bold tracking-[0.15em] bg-white text-black hover:bg-neutral-200 transition-colors uppercase shadow-none border border-transparent">
+          <Button
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="h-9 px-6 rounded-md text-[11px] font-semibold tracking-[0.1em] bg-white text-black hover:bg-neutral-200 transition-colors uppercase shadow-none border border-transparent cursor-pointer"
+          >
             Contact
           </Button>
         </div>
