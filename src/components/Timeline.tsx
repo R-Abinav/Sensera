@@ -1,6 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Check } from "lucide-react";
 import { useRef } from "react";
+import img1 from "../assets/img_1.jpg";
+import img2 from "../assets/img_2.jpg";
+import img3 from "../assets/img_3.jpg";
+import img4 from "../assets/img_4.png";
+import img5 from "../assets/img_5.png";
 
 const timelineData = [
   {
@@ -8,7 +13,7 @@ const timelineData = [
     title: "Concept & Team Formation",
     duration: "0–1 month",
     status: "completed",
-    image: "/src/assets/img_1.jpg",
+    image: img1,
     sections: [
       {
         label: "Goal",
@@ -29,7 +34,7 @@ const timelineData = [
     title: "Parallel Development",
     duration: "1–3 months",
     status: "upcoming",
-    image: "/src/assets/img_2.jpg",
+    image: img2,
     sections: [
       {
         label: "Software Track — Goal",
@@ -63,7 +68,7 @@ const timelineData = [
     title: "Testing & Refinement",
     duration: "3–6 months",
     status: "upcoming",
-    image: "/src/assets/img_3.jpg",
+    image: img3,
     sections: [
       {
         label: "Software",
@@ -84,7 +89,7 @@ const timelineData = [
     title: "Integration Phase",
     duration: "6–12 months",
     status: "upcoming",
-    image: "/src/assets/img_4.png",
+    image: img4,
     sections: [
       {
         label: "Goal",
@@ -105,7 +110,7 @@ const timelineData = [
     title: "Deployment & Scaling",
     duration: "12+ months",
     status: "upcoming",
-    image: "/src/assets/img_5.png",
+    image: img5,
     sections: [
       {
         label: "Goal",

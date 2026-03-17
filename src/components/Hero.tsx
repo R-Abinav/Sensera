@@ -1,25 +1,20 @@
 import { motion } from "framer-motion";
+import heartBg from "../assets/heart_bg.jpg";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-black">
       {/* Gentle Breathing Background Heart */}
       <motion.img
-        src="/src/assets/heart_bg.jpg"
+        src={heartBg}
         alt="Background Heart"
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[60vh] md:h-[70vh] w-auto object-contain z-0 mix-blend-screen"
         initial={{ opacity: 0 }}
         animate={{
           opacity: 0.45,
-          scale: [1, 1.04, 1],
         }}
         transition={{
-          opacity: { duration: 2, ease: "easeOut" },
-          scale: {
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          },
+          opacity: { duration: 2, ease: "easeOut" }
         }}
         style={{ pointerEvents: "none" }}
       />

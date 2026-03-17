@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import stethBg from "../assets/no_bg_steth.png";
 
 export function Solution() {
   const features = [
@@ -80,7 +81,7 @@ export function Solution() {
             className="w-full h-full flex items-center justify-center pt-12 lg:pt-0"
           >
             <img
-              src="/src/assets/no_bg_steth.png"
+              src={stethBg}
               alt="Stethoscope"
               className="w-full max-w-lg object-contain bg-transparent drop-shadow-2xl"
             />
