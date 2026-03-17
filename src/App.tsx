@@ -22,10 +22,10 @@ function App() {
         <h1 className="font-['Cormorant_Garamond'] font-light text-[1.5rem] tracking-[0.3em] text-white opacity-100 uppercase mb-4">
           Sensera
         </h1>
-        <p className="font-['Cormorant_Garamond'] font-light text-[1rem] tracking-[0.1em] text-white opacity-50 mb-2">
+        <p className="font-['Cormorant_Garamond'] font-light text-[1rem] tracking-[0.1em] text-white opacity-80 mb-2">
           This website is best experienced on a laptop.
         </p>
-        <p className="font-['Cormorant_Garamond'] font-light text-[1rem] tracking-[0.1em] text-white opacity-35">
+        <p className="font-['Cormorant_Garamond'] font-light text-[1rem] tracking-[0.1em] text-white opacity-60">
           Mobile version coming soon.
         </p>
       </div>
