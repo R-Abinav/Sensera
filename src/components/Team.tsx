@@ -1,13 +1,40 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function Team() {
-  const teamMembers = Array.from({ length: 9 }).map((_, i) => ({
-    name: `Team Member ${i + 1}`,
-    role: "Placeholder Role",
-    bio: "This is a placeholder bio describing the team member's expertise and their contribution to the mission of transforming healthcare."
-  }));
+  const teamMembers = [
+    {
+      name: "Team Member 1",
+      role: "Placeholder Role",
+      bio: "This is a placeholder bio describing the team member's expertise and their contribution to the mission of transforming healthcare.",
+      image: "/team/1.jpeg"
+    },
+    {
+      name: "Team Member 2",
+      role: "Placeholder Role",
+      bio: "This is a placeholder bio describing the team member's expertise and their contribution to the mission of transforming healthcare.",
+      image: "/team/2.jpeg"
+    },
+    {
+      name: "Team Member 3",
+      role: "Placeholder Role",
+      bio: "This is a placeholder bio describing the team member's expertise and their contribution to the mission of transforming healthcare.",
+      image: "/team/3.jpeg"
+    },
+    {
+      name: "Team Member 4",
+      role: "Placeholder Role",
+      bio: "This is a placeholder bio describing the team member's expertise and their contribution to the mission of transforming healthcare.",
+      image: "/team/4.jpeg"
+    },
+    {
+      name: "Team Member 5",
+      role: "Placeholder Role",
+      bio: "This is a placeholder bio describing the team member's expertise and their contribution to the mission of transforming healthcare.",
+      image: "/team/5.jpeg"
+    }
+  ];
 
   return (
     <section id="team" className="py-24 px-6 relative">
@@ -41,6 +68,7 @@ export function Team() {
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   <div className="flex-shrink-0">
                     <Avatar className="w-32 h-32 md:w-48 md:h-48 border-4 border-white/10 shadow-xl">
+                      <AvatarImage src={member.image} alt={member.name} className="object-cover" />
                       <AvatarFallback className="text-3xl bg-secondary text-foreground">{member.name.charAt(12)}</AvatarFallback>
                     </Avatar>
                   </div>
