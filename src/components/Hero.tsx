@@ -32,7 +32,7 @@ export function Hero() {
           </h1>
 
           {/* Tagline */}
-          <p className="font-['Cormorant_SC'] font-normal text-xs md:text-sm tracking-[0.4em] md:tracking-[0.5em] text-[#4EECD4] uppercase mt-4 md:mt-8 ml-[0.5em]">
+          <p className="font-['Cormorant_SC'] font-normal text-lg md:text-xl lg:text-2xl tracking-[0.3em] md:tracking-[0.4em] text-[#4EECD4] uppercase mt-4 md:mt-8 ml-[0.5em]">
             Predict. Prevent. Protect.
           </p>
         </motion.div>
@@ -42,12 +42,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="max-w-[800px] px-6 mt-16 md:mt-24 space-y-8 flex flex-col items-center"
+          className="max-w-[750px] px-6 mt-16 md:mt-24 space-y-8 flex flex-col items-center"
         >
           <h2 className="text-4xl md:text-6xl font-semibold text-white">
             Care before it's too late.
           </h2>
-          <p className="font-normal text-[1.15rem] leading-[1.9] tracking-normal text-white/80 text-center">
+          <p className="font-normal text-[1.25rem] leading-[1.8] tracking-normal text-white/[0.85] text-center">
             Our platform addresses delays in recognising deterioration of
             patients' health status, and promptly notifies family members and
             primary responders to ensure the patient receives timely medical

@@ -29,7 +29,7 @@ export function Navbar() {
             Our Solution
           </a>
           <a
-            href="#status"
+            href="#timeline"
             className="text-white hover:text-white/70 transition-colors"
           >
             Status

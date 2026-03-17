@@ -120,7 +120,7 @@ export function Team() {
                 <div
                   className={`space-y-4 text-center ${index % 2 !== 0 ? "md:text-left" : "md:text-left"} flex-1 overflow-hidden`}
                 >
-                  <h3 className="text-5xl md:text-7xl lg:text-[6rem] font-semibold tracking-tighter text-white uppercase leading-none whitespace-nowrap overflow-hidden text-ellipsis">
+                  <h3 className="text-3xl md:text-[2rem] font-semibold tracking-tighter text-white uppercase leading-[1.2]">
                     {member.name}
                   </h3>
                   <p className="font-['Cormorant_SC'] text-sm md:text-base text-white/80 font-normal uppercase tracking-[0.25em]">

@@ -226,7 +226,7 @@ export function Timeline() {
                     }`}
                   >
                     <div className="flex flex-col gap-1 mb-8 w-full max-w-lg">
-                      <h3 className="font-semibold text-3xl md:text-5xl text-white mb-3 tracking-normal">
+                      <h3 className="font-semibold text-[2rem] text-white mb-3 tracking-normal">
                         {item.phase} — {item.title}
                       </h3>
                       <div
@@ -234,7 +234,7 @@ export function Timeline() {
                           isEven ? "md:justify-end" : "md:justify-start"
                         }`}
                       >
-                        <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-white/50">
+                        <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-[#4EECD4] border border-[#4EECD4]/30 rounded-full px-4 py-1.5 bg-white/5">
                           {item.duration}
                         </span>
                         {item.status === "completed" && (
@@ -242,8 +242,8 @@ export function Timeline() {
                             <span className="text-white/30 hidden md:inline">
                               ·
                             </span>
-                            <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-white flex items-center gap-1.5 ml-1">
-                              <Check className="w-3.5 h-3.5" strokeWidth={3} />{" "}
+                            <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-black bg-[#FFD700] px-3 py-1 flex items-center gap-1.5 ml-2 font-semibold">
+                              <Check className="w-3.5 h-3.5 text-black" strokeWidth={3} />{" "}
                               Completed
                             </span>
                           </>
@@ -258,10 +258,10 @@ export function Timeline() {
                     >
                       {item.sections.map((sec, idx) => (
                         <div key={idx} className={sec.marginTop ? "mt-10" : ""}>
-                          <span className="font-['Cormorant_SC'] uppercase text-[0.8rem] md:text-[0.85rem] tracking-[0.3em] text-white/60 block mb-2">
+                          <span className="block font-['Cormorant_SC'] uppercase text-[0.8rem] md:text-[0.85rem] tracking-[0.3em] text-[#4EECD4] mb-2 font-semibold">
                             {sec.label}
                           </span>
-                          <p className="font-light text-[1.15rem] leading-[1.9] text-white/[0.85]">
+                          <p className="font-light text-[1.15rem] leading-[1.85] text-white/[0.85]">
                             {sec.text}
                           </p>
                         </div>
@@ -284,8 +284,10 @@ export function Timeline() {
                       alt={`${item.phase} visual`}
                       className="w-full object-contain bg-transparent relative drop-shadow-2xl"
                       style={{ 
-                        maxHeight: "400px",
-                        clipPath: index >= 2 ? "inset(0 0 8% 0)" : "none"
+                        maxHeight: index === 1 ? "900px" : "500px",
+                        clipPath: index >= 2 ? "inset(0 0 8% 0)" : "none",
+                        transform: index === 1 ? "scale(1.5) translateX(10%)" : "none",
+                        transformOrigin: index === 1 ? "center right" : "center"
                       }}
                     />
                   </motion.div>

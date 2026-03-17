@@ -42,10 +42,10 @@ export function Solution() {
               <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-6">
                 Proactive Intelligence.
               </h2>
-              <p className="text-[1.15rem] leading-[1.9] text-white/80 font-normal">
+              <p className="text-[1.15rem] leading-[1.85] text-white/[0.85] font-normal">
                 Empowering proactive care through technology.
               </p>
-              <p className="text-[1.15rem] leading-[1.9] text-white/80 font-normal">
+              <p className="text-[1.15rem] leading-[1.85] text-white/[0.85] font-normal">
                 Using AI/ML models, the platform analyzes trends in the
                 patient’s health data, provides personalized health insights,
                 and recommends when a patient should seek medical consultation
@@ -66,7 +66,7 @@ export function Solution() {
                   <h3 className="font-semibold text-xl text-white mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-white/80 text-[1.15rem] leading-[1.9] font-normal">
+                  <p className="text-white/[0.85] text-[1.15rem] leading-[1.85] font-normal">
                     {feature.description}
                   </p>
                 </motion.div>
@@ -83,7 +83,8 @@ export function Solution() {
             <img
               src={stethBg}
               alt="Stethoscope"
-              className="w-full max-w-lg object-contain bg-transparent drop-shadow-2xl"
+              className="w-full max-w-none object-contain bg-transparent drop-shadow-2xl"
+              style={{ transform: "scale(1.4)", transformOrigin: "center left", maxHeight: "1000px" }}
             />
           </motion.div>
         </div>
