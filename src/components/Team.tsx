@@ -32,7 +32,7 @@ export function Team() {
       linkedin: "https://www.linkedin.com/in/pranavi-prasad-b473b7331/",
     },
     {
-      name: "Abinav Rajagopal",
+      name: "Abinav",
       role: "Founding Software Engineer",
       bio: "I'm Abinav, a BTech student at IIIT Kancheepuram. I work in cryptography — particularly ZK proofs and Web3 — and have a thing for hardware, building and breaking stuff to understand how it works. Scalable and distributed systems are my core interests, and I'm always down for a conversation about large system architectures.",
       image: "/team/abi.jpeg",
@@ -46,7 +46,7 @@ export function Team() {
       linkedin: "#",
     },
     {
-      name: "Lithin Sai Kumar",
+      name: "Lithin SK",
       role: "Founding Hardware Engineer",
       bio: "",
       image: "/team/lithin.jpeg",
