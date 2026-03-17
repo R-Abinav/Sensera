@@ -39,7 +39,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full py-24 md:py-32 bg-[#0a0f1e]"
+      className="relative w-full py-24 md:py-32 bg-[#0a0f1c]"
     >
       <div className="max-w-3xl mx-auto px-6 w-full flex flex-col items-center">
         <div className="text-center space-y-4 mb-12">

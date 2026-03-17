@@ -82,57 +82,53 @@ export function Team() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="sticky transition-all duration-300 ease-in-out w-full h-screen"
+              className="sticky transition-all duration-300 ease-in-out w-full h-screen flex justify-center items-center bg-[#0a0f1c]"
               style={{
                 top: 0,
                 zIndex: index,
               }}
             >
               <div
-                className={`w-full h-full flex flex-col justify-center rounded-none border-none ring-0 shadow-2xl ${index % 2 === 0 ? "bg-[#020617]" : "bg-[#0a0f1c]"}`}
+                className={`max-w-[80rem] mx-auto flex flex-col ${index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-between gap-12 md:gap-20 w-full px-8 md:px-16`}
               >
-                <div
-                  className={`max-w-[80rem] mx-auto flex flex-col ${index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-between gap-12 md:gap-20 w-full px-8 md:px-16`}
-                >
-                  <div className="flex-shrink-0 relative group w-48 md:w-64 lg:w-80 aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 bg-secondary/20 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-blue-500/20 blur-[100px] group-hover:bg-blue-400/40 transition-colors duration-500 text-white z-0" />
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="object-cover w-full h-full relative z-10 transition-transform duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <span className="text-8xl font-bold text-white/50 relative z-10">
-                        {member.name.charAt(12)}
-                      </span>
-                    )}
+                <div className="flex-shrink-0 relative group w-48 md:w-64 lg:w-80 aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 bg-secondary/20 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-blue-500/20 blur-[100px] group-hover:bg-blue-400/40 transition-colors duration-500 text-white z-0" />
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="object-cover w-full h-full relative z-10 transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <span className="text-8xl font-semibold text-white/50 relative z-10">
+                      {member.name.charAt(12)}
+                    </span>
+                  )}
 
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 z-20 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-4 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm group/icon"
-                      >
-                        <Linkedin className="w-10 h-10 text-white group-hover/icon:text-[#0a66c2] transition-colors duration-300" />
-                      </a>
-                    </div>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 z-20 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm group/icon"
+                    >
+                      <Linkedin className="w-10 h-10 text-white group-hover/icon:text-[#0a66c2] transition-colors duration-300" />
+                    </a>
                   </div>
-                  <div
-                    className={`space-y-3 text-center ${index % 2 !== 0 ? "md:text-left" : "md:text-left"} flex-1 overflow-hidden`}
-                  >
-                    <h3 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] font-bold tracking-tighter text-white uppercase leading-none whitespace-nowrap overflow-hidden text-ellipsis">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm md:text-base text-white/50 font-bold uppercase tracking-[0.2em] opacity-80">
-                      {member.role}
-                    </p>
-                    <p className="text-xl md:text-3xl text-white/80 leading-relaxed max-w-3xl mt-6 font-normal">
-                      {member.bio}
-                    </p>
-                  </div>
+                </div>
+                <div
+                  className={`space-y-4 text-center ${index % 2 !== 0 ? "md:text-left" : "md:text-left"} flex-1 overflow-hidden`}
+                >
+                  <h3 className="text-5xl md:text-7xl lg:text-[6rem] font-semibold tracking-tighter text-white uppercase leading-none whitespace-nowrap overflow-hidden text-ellipsis">
+                    {member.name}
+                  </h3>
+                  <p className="font-['Cormorant_SC'] text-sm md:text-base text-white/80 font-normal uppercase tracking-[0.25em]">
+                    {member.role}
+                  </p>
+                  <p className="text-[1.15rem] text-white/80 leading-[1.9] max-w-3xl mt-6 font-normal">
+                    {member.bio}
+                  </p>
                 </div>
               </div>
             </div>

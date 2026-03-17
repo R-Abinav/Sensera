@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function Problem() {
   const problems = [
@@ -21,18 +20,18 @@ export function Problem() {
   ];
 
   return (
-    <section id="problem" className="py-24 px-6 relative">
+    <section id="problem" className="py-24 px-6 relative bg-[#0a0f1c]">
       <div className="max-w-6xl mx-auto space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-4 max-w-3xl mx-auto"
+          className="text-center space-y-6 max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
             The Problem We Are Solving
           </h2>
-          <p className="text-lg text-white leading-relaxed">
+          <p className="text-[1.15rem] leading-[1.9] text-white/80 font-normal">
             Our platform addresses delays in recognising deterioration of
             patients' health status and promptly notifies family members and
             primary responders to ensure the patient gets timely medical
@@ -40,7 +39,7 @@ export function Problem() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-12 md:gap-16">
           {problems.map((problem, idx) => (
             <motion.div
               key={idx}
@@ -48,17 +47,14 @@ export function Problem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.2 }}
+              className="flex flex-col gap-4 text-center md:text-left"
             >
-              <Card className="h-full bg-background/50 backdrop-blur-sm border-white/5 hover:border-white/20 transition-colors">
-                <CardHeader>
-                  <CardTitle className="text-xl text-white">
-                    {problem.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-white">{problem.description}</p>
-                </CardContent>
-              </Card>
+              <h3 className="text-2xl font-semibold text-white">
+                {problem.title}
+              </h3>
+              <p className="text-[1.15rem] leading-[1.9] text-white/80 font-normal">
+                {problem.description}
+              </p>
             </motion.div>
           ))}
         </div>

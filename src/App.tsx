@@ -2,6 +2,7 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Problem } from "./components/Problem";
 import { Solution } from "./components/Solution";
+import { FounderQuote } from "./components/FounderQuote";
 import { Timeline } from "./components/Timeline";
 import { Team } from "./components/Team";
 import { Contact } from "./components/Contact";
@@ -16,6 +17,7 @@ function App() {
         <Hero />
         <Problem />
         <Solution />
+        <FounderQuote />
         <Timeline />
         <Team />
         <Contact />

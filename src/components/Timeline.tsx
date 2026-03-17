@@ -1,139 +1,263 @@
-import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Circle } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Check } from "lucide-react";
+import { useRef } from "react";
 
-export function Timeline() {
-  const timelineData = [
-    {
-      phase: "Phase 1",
-      timeline: "0–1 month",
-      title: "Concept & Team Formation",
-      status: "current",
-      goal: "Define the product and organize teams",
-      tasks: [
-        "Finalize problem statement",
-        "Define core features (monitoring, alerts, AI insights)",
-        "Assign Medical, Software, and Hardware teams",
-        "Identify existing wearable APIs for initial integration",
-      ],
-      deliverable: "Concept note + product roadmap",
-    },
-    {
-      phase: "Phase 2",
-      timeline: "1–3 months",
-      title: "Parallel Development",
-      status: "upcoming",
-      goal: "Build the first software platform",
-      track: "Software Track",
-      tasks: [
-        "Integration with existing wearable APIs",
-        "Health monitoring dashboard",
-        "AI anomaly detection",
-        "Escalation alerts integration",
-      ],
-      deliverable: "Alpha Software Release",
-    },
-  ];
+const timelineData = [
+  {
+    phase: "Phase 1",
+    title: "Concept & Team Formation",
+    duration: "0–1 month",
+    status: "completed",
+    sections: [
+      {
+        label: "Goal",
+        text: "Define the product and organize teams",
+      },
+      {
+        label: "Tasks",
+        text: "Finalize problem statement · Define core features: continuous health monitoring, escalation alerts to family and responders, AI health insights · Assign teams: Medical (clinical validation), Software (platform and AI models), Hardware (wearable prototype) · Identify existing wearable APIs",
+      },
+      {
+        label: "Deliverable",
+        text: "Concept note + product roadmap",
+      },
+    ],
+  },
+  {
+    phase: "Phase 2",
+    title: "Parallel Development",
+    duration: "1–3 months",
+    status: "upcoming",
+    sections: [
+      {
+        label: "Software Track — Goal",
+        text: "Build the first software platform",
+      },
+      {
+        label: "Features",
+        text: "Wearable API integration · Health monitoring dashboard · AI anomaly detection · Escalation alerts to caregivers and responders · Early recommendation system",
+      },
+      {
+        label: "Deliverable",
+        text: "Software MVP",
+      },
+      {
+        label: "Hardware Track — Goal",
+        text: "Begin wearable development",
+        marginTop: true,
+      },
+      {
+        label: "Tasks",
+        text: "Sensor selection · Prototype architecture · Initial hardware design · Integration planning",
+      },
+      {
+        label: "Deliverable",
+        text: "Hardware prototype design",
+      },
+    ],
+  },
+  {
+    phase: "Phase 3",
+    title: "Testing & Refinement",
+    duration: "3–6 months",
+    status: "upcoming",
+    sections: [
+      {
+        label: "Software",
+        text: "Improve AI models · Test alert systems · Beta testing with users",
+      },
+      {
+        label: "Hardware",
+        text: "Build first functional wearable prototype · Sensor calibration · Power optimization",
+      },
+      {
+        label: "Deliverable",
+        text: "Beta software + prototype wearable",
+      },
+    ],
+  },
+  {
+    phase: "Phase 4",
+    title: "Integration Phase",
+    duration: "6–12 months",
+    status: "upcoming",
+    sections: [
+      {
+        label: "Goal",
+        text: "Combine software platform with proprietary wearable",
+      },
+      {
+        label: "Tasks",
+        text: "Integrate device data with platform · Optimize real-time monitoring · Conduct pilot testing",
+      },
+      {
+        label: "Deliverable",
+        text: "Integrated system",
+      },
+    ],
+  },
+  {
+    phase: "Phase 5",
+    title: "Deployment & Scaling",
+    duration: "12+ months",
+    status: "upcoming",
+    sections: [
+      {
+        label: "Goal",
+        text: "Full product launch",
+      },
+      {
+        label: "Features",
+        text: "Software platform · Proprietary wearable · AI-driven monitoring · Caregiver and responder alert system",
+      },
+      {
+        label: "Deliverable",
+        text: "Complete health monitoring ecosystem",
+      },
+    ],
+  },
+];
+
+const TimelineNode = ({ status }: { status: string }) => {
+  if (status === "completed") {
+    return (
+      <div
+        className="relative w-[14px] h-[14px] rounded-full border border-white bg-[#0a0f1c] flex items-center justify-center z-20"
+        style={{
+          boxShadow: "0 0 16px rgba(255,255,255,0.9)",
+        }}
+      >
+        <Check className="w-2.5 h-2.5 text-white" strokeWidth={4} />
+      </div>
+    );
+  }
 
   return (
-    <section id="timeline" className="py-24 px-6 relative">
-      <div className="max-w-4xl mx-auto space-y-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center space-y-4"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-            Startup Development Timeline
+    <motion.div
+      initial={{
+        scale: 1,
+        boxShadow: "none",
+        borderColor: "rgba(255,255,255,0.3)",
+      }}
+      whileInView={{
+        scale: 1.2,
+        boxShadow: "0 0 16px rgba(255,255,255,0.9)",
+        borderColor: "rgba(255,255,255,1)",
+      }}
+      viewport={{ once: true, margin: "-50% 0px" }}
+      className="relative w-[14px] h-[14px] rounded-full border bg-[#0a0f1c] flex items-center justify-center z-20 transition-all duration-300"
+    />
+  );
+};
+
+export function Timeline() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"],
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  return (
+    <section id="timeline" className="py-24 px-6 relative bg-[#0a0f1c]">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center space-y-6 mb-24 md:mb-32">
+          <h2 className="font-['Cormorant_SC'] text-5xl md:text-[4rem] tracking-[0.3em] uppercase text-white font-medium">
+            Development Timeline
           </h2>
-          <p className="text-lg text-white w-full max-w-2xl mx-auto">
-            How we are approaching product development and execution.
-          </p>
-        </motion.div>
+        </div>
 
-        <div className="relative border-l border-white/10 ml-4 md:ml-0 md:space-y-12 space-y-8">
-          {timelineData.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="relative pl-8 md:pl-16"
-            >
-              {/* Timeline dot */}
-              <div className="absolute -left-3.5 md:-left-4 top-1 bg-background rounded-full">
-                {item.status === "current" ? (
-                  <CheckCircle2 className="w-7 h-7 md:w-8 md:h-8 text-white animate-pulse" />
-                ) : (
-                  <Circle className="w-7 h-7 md:w-8 md:h-8 text-white/50" />
-                )}
-              </div>
+        <div
+          ref={containerRef}
+          className="relative w-full max-w-5xl mx-auto pb-24"
+        >
+          {/* Base Line */}
+          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[1px] bg-white/[0.15] -translate-x-1/2 z-0" />
 
-              <div className="space-y-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-2xl font-bold text-white">
-                    {item.phase} — {item.title}
-                  </h3>
-                  <Badge
-                    variant={
-                      item.status === "current" ? "default" : "secondary"
-                    }
+          {/* Glowing Animated Line */}
+          <motion.div
+            className="absolute left-[24px] md:left-1/2 top-0 w-[1px] bg-white -translate-x-1/2 origin-top z-10"
+            style={{
+              height: lineHeight,
+              boxShadow: "0 0 12px rgba(255,255,255,0.8)",
+            }}
+          />
+
+          <div className="flex flex-col gap-32 md:gap-40 w-full relative z-20">
+            {timelineData.map((item, index) => {
+              const isEven = index % 2 === 0;
+
+              return (
+                <div
+                  key={index}
+                  className="relative flex flex-col md:flex-row items-start md:items-center w-full"
+                >
+                  {/* Node */}
+                  <div className="absolute left-[24px] md:left-1/2 top-6 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 z-20 pt-1 md:pt-0">
+                    <TimelineNode status={item.status} />
+                  </div>
+
+                  {/* Content */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-30% 0px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className={`w-full md:w-1/2 pl-16 md:pl-0 flex flex-col ${
+                      isEven
+                        ? "md:pr-24 md:items-end text-left md:text-right md:mr-auto"
+                        : "md:pl-24 md:items-start text-left md:ml-auto"
+                    }`}
                   >
-                    {item.timeline}
-                  </Badge>
-                  {item.status === "current" && (
-                    <Badge
-                      variant="outline"
-                      className="border-white/50 text-white"
-                    >
-                      Current Phase
-                    </Badge>
-                  )}
-                </div>
-
-                <div className="p-6 bg-background/50 border border-white/5 rounded-xl space-y-4 backdrop-blur-sm shadow-lg">
-                  <div>
-                    <span className="text-sm font-semibold uppercase tracking-wider text-white">
-                      Goal
-                    </span>
-                    <p className="text-lg font-normal text-white mt-1">
-                      {item.goal}
-                    </p>
-                  </div>
-
-                  {item.track && (
-                    <div className="inline-block px-3 py-1 bg-white/10 text-white rounded-full text-sm font-medium mt-2">
-                      {item.track}
+                    <div className="flex flex-col gap-1 mb-8 w-full max-w-lg">
+                      <h3 className="font-semibold text-3xl md:text-5xl text-white mb-3 tracking-normal">
+                        {item.phase} — {item.title}
+                      </h3>
+                      <div
+                        className={`flex items-center gap-3 ${
+                          isEven ? "md:justify-end" : "md:justify-start"
+                        }`}
+                      >
+                        <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-white/50">
+                          {item.duration}
+                        </span>
+                        {item.status === "completed" && (
+                          <>
+                            <span className="text-white/30 hidden md:inline">
+                              ·
+                            </span>
+                            <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-white flex items-center gap-1.5 ml-1">
+                              <Check className="w-3.5 h-3.5" strokeWidth={3} />{" "}
+                              Completed
+                            </span>
+                          </>
+                        )}
+                      </div>
                     </div>
-                  )}
 
-                  <div className="pt-2">
-                    <span className="text-sm font-semibold uppercase tracking-wider text-white">
-                      Tasks
-                    </span>
-                    <ul className="mt-2 space-y-2">
-                      {item.tasks.map((task, idx) => (
-                        <li key={idx} className="flex items-start text-white">
-                          <span className="mr-2 text-white font-bold">•</span>
-                          {task}
-                        </li>
+                    <div
+                      className={`space-y-6 max-w-lg w-full ${
+                        isEven ? "md:text-right" : "md:text-left"
+                      }`}
+                    >
+                      {item.sections.map((sec, idx) => (
+                        <div key={idx} className={sec.marginTop ? "mt-10" : ""}>
+                          <span className="font-['Cormorant_SC'] uppercase text-[0.8rem] md:text-[0.85rem] tracking-[0.3em] text-white/60 block mb-2">
+                            {sec.label}
+                          </span>
+                          <p className="font-light text-[1.15rem] leading-[1.9] text-white/[0.85]">
+                            {sec.text}
+                          </p>
+                        </div>
                       ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-4 border-t border-white/5">
-                    <span className="text-sm font-semibold uppercase tracking-wider text-white">
-                      Deliverable
-                    </span>
-                    <p className="font-normal text-white mt-1">
-                      {item.deliverable}
-                    </p>
-                  </div>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
