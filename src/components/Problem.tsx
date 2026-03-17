@@ -1,23 +1,19 @@
 import { motion } from "framer-motion";
-import { Activity, AlertTriangle, Clock } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function Problem() {
   const problems = [
     {
       title: "Delayed Recognition",
-      description: "Critical deterioration often goes unnoticed until it becomes an emergency, reducing the window for effective intervention.",
-      icon: <Clock className="w-8 h-8" />
+      description: "Critical deterioration often goes unnoticed until it becomes an emergency, reducing the window for effective intervention."
     },
     {
       title: "Disconnected Care",
-      description: "Patients' health status isn't continuously monitored outside clinical settings, leading to fragmented care and missed warning signs.",
-      icon: <Activity className="w-8 h-8" />
+      description: "Patients' health status isn't continuously monitored outside clinical settings, leading to fragmented care and missed warning signs."
     },
     {
       title: "Communication Gaps",
-      description: "Family members and primary responders are often the last to know when a patient's health declines unexpectedly.",
-      icon: <AlertTriangle className="w-8 h-8" />
+      description: "Family members and primary responders are often the last to know when a patient's health declines unexpectedly."
     }
   ];
 
@@ -47,9 +43,6 @@ export function Problem() {
             >
               <Card className="h-full bg-background/50 backdrop-blur-sm border-white/5 hover:border-white/20 transition-colors">
                 <CardHeader>
-                  <div className="mb-4 inline-block">
-                    {problem.icon}
-                  </div>
                   <CardTitle className="text-xl">{problem.title}</CardTitle>
                 </CardHeader>
                 <CardContent>

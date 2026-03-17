@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export function Team() {
   const teamMembers = Array.from({ length: 9 }).map((_, i) => ({
     name: `Team Member ${i + 1}`,
     role: "Placeholder Role",
-    bio: "This is a placeholder bio describing the team member's expertise and their contribution to the mission of transforming healthcare.",
-    image: `https://i.pravatar.cc/150?u=${i + 10}`
+    bio: "This is a placeholder bio describing the team member's expertise and their contribution to the mission of transforming healthcare."
   }));
 
   return (
@@ -35,15 +34,14 @@ export function Team() {
                 zIndex: index,
               }}
             >
-              <Card className="w-full bg-black/60 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden p-6 md:p-10 mb-8 transform-gpu" style={{
+              <Card className="w-full bg-transparent backdrop-blur-md border border-white/20 shadow-2xl overflow-hidden p-6 md:p-10 mb-8 transform-gpu" style={{
                 transform: `scale(${1 - (teamMembers.length - 1 - index) * 0.02})`,
                 opacity: 1,
               }}>
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   <div className="flex-shrink-0">
                     <Avatar className="w-32 h-32 md:w-48 md:h-48 border-4 border-white/10 shadow-xl">
-                      <AvatarImage src={member.image} alt={member.name} />
-                      <AvatarFallback className="text-3xl bg-secondary text-foreground">{member.name.charAt(0)}</AvatarFallback>
+                      <AvatarFallback className="text-3xl bg-secondary text-foreground">{member.name.charAt(12)}</AvatarFallback>
                     </Avatar>
                   </div>
                   <div className="space-y-4 text-center md:text-left flex-1">
