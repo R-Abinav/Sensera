@@ -10,7 +10,7 @@ export function Hero() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[60vh] md:h-[70vh] w-auto object-contain z-0 mix-blend-screen"
         initial={{ opacity: 0 }}
         animate={{
-          opacity: 0.25,
+          opacity: 0.45,
           scale: [1, 1.04, 1],
         }}
         transition={{

@@ -1,68 +1,19 @@
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
 
-export function Team() {
-  const teamMembers = [
+export function Mentors() {
+  const mentorMembers = [
     {
-      name: "Aditya Sahoo",
-      role: "Founder",
-      bio: "",
-      image: "/team/sahoo.jpeg",
-      linkedin: "https://www.linkedin.com/in/aditya-sahoo-8ba0812b9/",
-    },
-    {
-      name: "Aditya BR",
-      role: "Co-Founder",
-      bio: "",
-      image: "/team/br.jpeg",
-      linkedin: "https://www.linkedin.com/in/aditya-bharath-raja-rao/",
-    },
-    {
-      name: "Akshat G",
-      role: "Founding ML Engineer",
-      bio: "I'm Akshat G., a third-year CS & AI undergrad at Manipal Institute of Technology Bengaluru. I explore ML, deep learning, and computer vision out of genuine curiosity — turning what I learn into beginner-friendly articles and tutorials, and gradually getting involved in research to keep that learning more structured.",
-      image: "/team/akshat.jpeg",
-      linkedin: "https://www.linkedin.com/in/akshat-gururaj/",
-    },
-    {
-      name: "Pranavi Prasad",
-      role: "Founding Clinical Researcher",
-      bio: "I’m Pranavi, a third-year MBBS student at Shri Atal Bihari Vajpayee Medical College and Research Institute, Bangalore. I’ve always been passionate about helping people and making a meaningful difference, and I’m constantly looking for ways to contribute to a better and more compassionate world.",
-      image: "/team/pranavi.jpeg",
-      linkedin: "https://www.linkedin.com/in/pranavi-prasad-b473b7331/",
-    },
-    {
-      name: "Abinav Rajagopal",
-      role: "Founding Software Engineer",
-      bio: "I'm Abinav, a BTech student at IIIT Kancheepuram. I work in cryptography — particularly ZK proofs and Web3 — and have a thing for hardware, building and breaking stuff to understand how it works. Scalable and distributed systems are my core interests, and I'm always down for a conversation about large system architectures.",
-      image: "/team/abi.jpeg",
-      linkedin: "https://www.linkedin.com/in/abinav-rajagopal-2ba65a286/",
-    },
-    {
-      name: "Suhail",
-      role: "Founding clinical researcher",
-      bio: "",
-      image: "/team/suhail.jpeg",
-      linkedin: "#",
-    },
-    {
-      name: "Lithin Sai Kumar",
-      role: "Founding Hardware Engineer",
-      bio: "",
-      image: "/team/lithin.jpeg",
-      linkedin: "https://www.linkedin.com/in/lithinsaikumar/",
-    },
-    {
-      name: "Pammi Nanda",
-      role: "Founding Hardware Engineer",
-      bio: "",
-      image: "/team/nanda.jpeg",
-      linkedin: "https://www.linkedin.com/in/nanda-mitra-pammi-2b1101291/",
+      name: "Dr. Ashok Shenoy",
+      role: "Mentor",
+      bio: "Professor of Pharmacology at Kasturba Medical College, Mangalore. Experienced clinician and educator with a demonstrated history in Clinical Research, Pharmacology, Clinical Trials, and Bioethics.",
+      image: "/team/ashok_faculty.jpeg",
+      linkedin: "https://www.linkedin.com/in/ashok-s-302a4955/",
     },
   ];
 
   return (
-    <section id="team" className="relative w-full">
+    <section id="mentors" className="relative w-full">
       <div className="w-full space-y-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,15 +22,15 @@ export function Team() {
           className="space-y-4 text-center px-6 pt-32"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white uppercase">
-            Meet the Team
+            Advisors & Mentors
           </h2>
           <p className="text-xl md:text-2xl text-white/80 w-full max-w-3xl mx-auto">
-            A diverse group of experts committed to transforming healthcare.
+            Guiding our vision with decades of clinical and domain expertise.
           </p>
         </motion.div>
 
         <div className="relative pb-24">
-          {teamMembers.map((member, index) => (
+          {mentorMembers.map((member, index) => (
             <div
               key={index}
               className="sticky transition-all duration-300 ease-in-out w-full h-screen flex justify-center items-center bg-black"
@@ -89,7 +40,9 @@ export function Team() {
               }}
             >
               <div
-                className={`max-w-[80rem] mx-auto flex flex-col ${index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-between gap-12 md:gap-20 w-full px-8 md:px-16`}
+                className={`max-w-[80rem] mx-auto flex flex-col ${
+                  index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
+                } items-center justify-between gap-12 md:gap-20 w-full px-8 md:px-16`}
               >
                 <div className="flex-shrink-0 relative group w-48 md:w-64 lg:w-80 aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 bg-secondary/20 flex items-center justify-center">
                   <div className="absolute inset-0 bg-blue-500/20 blur-[100px] group-hover:bg-blue-400/40 transition-colors duration-500 text-white z-0" />
@@ -101,7 +54,7 @@ export function Team() {
                     />
                   ) : (
                     <span className="text-8xl font-semibold text-white/50 relative z-10">
-                      {member.name.charAt(12)}
+                      {member.name.charAt(0)}
                     </span>
                   )}
 
@@ -118,7 +71,7 @@ export function Team() {
                   </div>
                 </div>
                 <div
-                  className={`space-y-4 text-center ${index % 2 !== 0 ? "md:text-left" : "md:text-left"} flex-1 overflow-hidden`}
+                  className={`space-y-4 text-center md:text-left flex-1 overflow-hidden`}
                 >
                   <h3 className="text-5xl md:text-7xl lg:text-[6rem] font-semibold tracking-tighter text-white uppercase leading-none whitespace-nowrap overflow-hidden text-ellipsis">
                     {member.name}

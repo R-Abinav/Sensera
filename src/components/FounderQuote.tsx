@@ -23,7 +23,7 @@ export function FounderQuote() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-[#0a0f1c] pt-[50vh] pb-[50vh]"
+      className="relative w-full bg-black pt-[50vh] pb-[50vh]"
     >
       <div className="sticky top-0 min-h-screen w-full flex flex-col justify-center px-6">
         <motion.div

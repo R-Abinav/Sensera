@@ -27,7 +27,7 @@ export function Solution() {
   return (
     <section
       id="solution"
-      className="py-24 px-6 relative overflow-hidden bg-[#0a0f1c]"
+      className="py-24 px-6 relative overflow-hidden bg-black"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -80,7 +80,7 @@ export function Solution() {
             className="w-full h-full flex items-center justify-center pt-12 lg:pt-0"
           >
             <img
-              src="/src/assets/withoutbg_stheth.png"
+              src="/src/assets/no_bg_steth.png"
               alt="Stethoscope"
               className="w-full max-w-lg object-contain bg-transparent drop-shadow-2xl"
             />

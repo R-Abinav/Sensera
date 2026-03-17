@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Footer() {
   return (
-    <footer className="pt-12 pb-8 px-6 bg-[#0a0f1c] text-white overflow-hidden">
+    <footer className="pt-12 pb-8 px-6 bg-black text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Main Content Area: Links & Watermark */}
         <div className="relative w-full py-8 md:py-16 flex justify-center items-center">

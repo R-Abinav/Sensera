@@ -20,7 +20,7 @@ export function Problem() {
   ];
 
   return (
-    <section id="problem" className="py-24 px-6 relative bg-[#0a0f1c]">
+    <section id="problem" className="py-24 px-6 relative bg-black">
       <div className="max-w-6xl mx-auto space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

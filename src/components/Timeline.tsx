@@ -8,6 +8,7 @@ const timelineData = [
     title: "Concept & Team Formation",
     duration: "0–1 month",
     status: "completed",
+    image: "/src/assets/img_1.jpg",
     sections: [
       {
         label: "Goal",
@@ -28,6 +29,7 @@ const timelineData = [
     title: "Parallel Development",
     duration: "1–3 months",
     status: "upcoming",
+    image: "/src/assets/img_2.jpg",
     sections: [
       {
         label: "Software Track — Goal",
@@ -61,6 +63,7 @@ const timelineData = [
     title: "Testing & Refinement",
     duration: "3–6 months",
     status: "upcoming",
+    image: "/src/assets/img_3.jpg",
     sections: [
       {
         label: "Software",
@@ -81,6 +84,7 @@ const timelineData = [
     title: "Integration Phase",
     duration: "6–12 months",
     status: "upcoming",
+    image: "/src/assets/img_4.png",
     sections: [
       {
         label: "Goal",
@@ -101,6 +105,7 @@ const timelineData = [
     title: "Deployment & Scaling",
     duration: "12+ months",
     status: "upcoming",
+    image: "/src/assets/img_5.png",
     sections: [
       {
         label: "Goal",
@@ -122,7 +127,7 @@ const TimelineNode = ({ status }: { status: string }) => {
   if (status === "completed") {
     return (
       <div
-        className="relative w-[14px] h-[14px] rounded-full border border-white bg-[#0a0f1c] flex items-center justify-center z-20"
+        className="relative w-[14px] h-[14px] rounded-full border border-white bg-black flex items-center justify-center z-20"
         style={{
           boxShadow: "0 0 16px rgba(255,255,255,0.9)",
         }}
@@ -145,7 +150,7 @@ const TimelineNode = ({ status }: { status: string }) => {
         borderColor: "rgba(255,255,255,1)",
       }}
       viewport={{ once: true, margin: "-50% 0px" }}
-      className="relative w-[14px] h-[14px] rounded-full border bg-[#0a0f1c] flex items-center justify-center z-20 transition-all duration-300"
+      className="relative w-[14px] h-[14px] rounded-full border bg-black flex items-center justify-center z-20 transition-all duration-300"
     />
   );
 };
@@ -161,7 +166,7 @@ export function Timeline() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" className="py-24 px-6 relative bg-[#0a0f1c]">
+    <section id="timeline" className="py-24 px-6 relative bg-black">
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-6 mb-24 md:mb-32">
           <h2 className="font-['Cormorant_SC'] text-5xl md:text-[4rem] tracking-[0.3em] uppercase text-white font-medium">
@@ -192,7 +197,11 @@ export function Timeline() {
               return (
                 <div
                   key={index}
-                  className="relative flex flex-col md:flex-row items-start md:items-center w-full"
+                  className={`relative flex flex-col items-start w-full justify-between gap-12 md:gap-0 ${
+                    isEven
+                      ? "md:flex-row"
+                      : "md:flex-row-reverse md:items-center"
+                  }`}
                 >
                   {/* Node */}
                   <div className="absolute left-[24px] md:left-1/2 top-6 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 z-20 pt-1 md:pt-0">
@@ -207,8 +216,8 @@ export function Timeline() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className={`w-full md:w-1/2 pl-16 md:pl-0 flex flex-col ${
                       isEven
-                        ? "md:pr-24 md:items-end text-left md:text-right md:mr-auto"
-                        : "md:pl-24 md:items-start text-left md:ml-auto"
+                        ? "md:pr-24 md:items-end text-left md:text-right"
+                        : "md:pl-24 md:items-start text-left"
                     }`}
                   >
                     <div className="flex flex-col gap-1 mb-8 w-full max-w-lg">
@@ -253,6 +262,27 @@ export function Timeline() {
                         </div>
                       ))}
                     </div>
+                  </motion.div>
+
+                  {/* Image */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-30% 0px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className={`hidden md:flex relative w-full md:w-[45%] items-center justify-center ${
+                      isEven ? "md:pl-12 lg:pl-16" : "md:pr-12 lg:pr-16"
+                    }`}
+                  >
+                    <img
+                      src={item.image}
+                      alt={`${item.phase} visual`}
+                      className="w-full object-contain bg-transparent relative drop-shadow-2xl"
+                      style={{ 
+                        maxHeight: "400px",
+                        clipPath: index >= 2 ? "inset(0 0 8% 0)" : "none"
+                      }}
+                    />
                   </motion.div>
                 </div>
               );

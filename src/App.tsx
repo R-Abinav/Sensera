@@ -5,13 +5,14 @@ import { Solution } from "./components/Solution";
 import { FounderQuote } from "./components/FounderQuote";
 import { Timeline } from "./components/Timeline";
 import { Team } from "./components/Team";
+import { Mentors } from "./components/Mentors";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { AuroraBackground } from "./components/ui/AuroraBackground";
 
 function App() {
   return (
-    <AuroraBackground className="dark antialiased text-white selection:bg-blue-500/30 bg-gradient-to-br from-[#020617] via-[#0a0f1c] to-[#020215] bg-fixed">
+    <AuroraBackground className="dark antialiased text-white selection:bg-blue-500/30 bg-black">
       <Navbar />
       <main>
         <Hero />
@@ -20,6 +21,7 @@ function App() {
         <FounderQuote />
         <Timeline />
         <Team />
+        <Mentors />
         <Contact />
       </main>
       <Footer />
