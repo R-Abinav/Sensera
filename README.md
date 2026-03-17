@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+# Sensera
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend implementation for **Project Sensera** — a portfolio website showcasing our mission, problem statement, solution, and the team behind it.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Sensera** is a platform dedicated to addressing delays in recognizing the deterioration of patients' health status. Our goal is to provide care before it's too late by promptly notifying family members and primary responders to ensure timely medical attention.
 
-## React Compiler
+### The Problem
+Delayed recognition of deteriorating health leads to critical, and often avoidable, adverse events. When changes go unnoticed, the window for proactive medical intervention closes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### The Solution
+We continuously monitor health parameters by integrating wearable device data with electronic medical records (EMR) through secure APIs. Using a custom-built AI model, Sensera analyzes these trends to deliver personalized health insights and recommend timely medical consultation — shifting the paradigm from reactive to proactive care.
 
-## Expanding the ESLint configuration
+## Project Portfolio
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This website provides a comprehensive overview of the project, including:
+- **Problem Statement:** Why we are building this and who it helps.
+- **Solution Architecture:** How our technology bridges wearables and medical records using AI.
+- **Team:** The core team members driving Project Sensera.
+- **Mentors:** The advisors guiding our development and clinical approach.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This project was built using modern web development tools:
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+- Framer Motion
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To run the portfolio locally:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
