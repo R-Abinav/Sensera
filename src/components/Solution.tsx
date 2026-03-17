@@ -1,27 +1,23 @@
 import { motion } from "framer-motion";
-import { Brain, HeartPulse, RefreshCw, ShieldAlert } from "lucide-react";
+import { Brain, HeartPulse } from "lucide-react";
 
 export function Solution() {
   const features = [
     {
       title: "Continuous Monitoring",
-      description: "Integrating wearable device data with EMR/EHR through secure APIs for 24/7 health tracking.",
-      icon: <RefreshCw className="w-6 h-6" />
+      description: "Integrating wearable device data with EMR/EHR through secure APIs for 24/7 health tracking."
     },
     {
       title: "AI Health Insights",
-      description: "Machine learning models analyze trends in patient data to provide personalized, actionable insights.",
-      icon: <Brain className="w-6 h-6" />
+      description: "Machine learning models analyze trends in patient data to provide personalized, actionable insights."
     },
     {
       title: "Anomaly Detection",
-      description: "Proactive identification of early warning signs indicating potential health deterioration.",
-      icon: <HeartPulse className="w-6 h-6" />
+      description: "Proactive identification of early warning signs indicating potential health deterioration."
     },
     {
       title: "Escalation Alerts",
-      description: "Automated, timely notifications to family and primary responders when intervention is needed.",
-      icon: <ShieldAlert className="w-6 h-6" />
+      description: "Automated, timely notifications to family and primary responders when intervention is needed."
     }
   ];
 
@@ -53,15 +49,10 @@ export function Solution() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + idx * 0.1 }}
-                  className="flex gap-4 items-start"
+                  className="flex flex-col gap-2"
                 >
-                  <div className="flex-shrink-0 p-3 rounded-lg border border-white/20 bg-black/20 text-white backdrop-blur-sm font-bold">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">{feature.title}</h3>
-                    <p className="text-foreground">{feature.description}</p>
-                  </div>
+                  <h3 className="font-semibold text-lg">{feature.title}</h3>
+                  <p className="text-foreground text-sm md:text-base leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
