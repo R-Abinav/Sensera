@@ -21,7 +21,7 @@ export function Footer() {
   ];
 
   return (
-    <footer id="contact" className="pt-16 pb-8 px-6 bg-[#0a0f1c] text-slate-300 relative overflow-hidden">
+    <footer id="contact" className="pt-16 pb-8 px-6 bg-[#0a0f1c] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Top links section */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-24">
@@ -31,7 +31,7 @@ export function Footer() {
               <ul className="space-y-2">
                 {section.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
-                    <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                    <a href="#" className="text-sm text-white hover:text-white/80 transition-colors duration-200">
                       {link}
                     </a>
                   </li>
@@ -44,17 +44,17 @@ export function Footer() {
             <h4 className="font-semibold text-white tracking-wide">Connect</h4>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:hello@sensera.in" className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                <a href="mailto:hello@sensera.in" className="text-sm text-white hover:text-white/80 transition-colors duration-200">
                   hello@sensera.in
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                <a href="#" className="text-sm text-white hover:text-white/80 transition-colors duration-200">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors duration-200">
+                <a href="#" className="text-sm text-white hover:text-white/80 transition-colors duration-200">
                   Twitter / X
                 </a>
               </li>
@@ -69,7 +69,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-[12vw] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 select-none"
+            className="text-[12vw] font-black tracking-tighter text-white select-none"
             style={{ lineHeight: 0.85 }}
           >
             SENSERA
@@ -77,7 +77,7 @@ export function Footer() {
         </div>
 
         {/* Bottom copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 pt-8 border-t border-white/5">
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-white pt-8 border-t border-white/5">
           <p>© {new Date().getFullYear()} Sensera. All rights reserved.</p>
           <p className="mt-2 md:mt-0 font-medium">Care before it's too late.</p>
         </div>

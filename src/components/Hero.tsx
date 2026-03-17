@@ -17,9 +17,9 @@ export function Hero() {
           className="space-y-6"
         >
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance">
-            Care before it's <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600">too late.</span>
+            Care before it's <span className="text-white">too late.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-foreground font-medium max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white font-medium max-w-2xl mx-auto">
             Building systems that can detect early warning signs and ensure help arrives when it matters most.
           </p>
         </motion.div>
@@ -30,14 +30,14 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.5 }}
           className="relative max-w-3xl mx-auto mt-16 p-8 md:p-12 rounded-2xl bg-secondary/30 border border-white/10 backdrop-blur-sm"
         >
-          <div className="absolute -top-6 -left-6 text-6xl text-blue-500/20">"</div>
-          <p className="text-lg md:text-xl font-medium leading-relaxed italic text-foreground/90">
+          <div className="absolute -top-6 -left-6 text-6xl text-white/20">"</div>
+          <p className="text-lg md:text-xl font-medium leading-relaxed italic text-white">
             I started this with a simple thought — what if care reached people before it was too late?
           </p>
-          <p className="mt-4 text-base md:text-lg text-foreground/80 leading-relaxed italic">
+          <p className="mt-4 text-base md:text-lg text-white leading-relaxed italic">
             My grandfather suffered a stroke and didn’t receive medical attention in time. That experience stayed with me. It made me realise how often critical moments are missed — not because treatment doesn’t exist, but because it doesn’t reach in time.
           </p>
-          <p className="mt-6 text-sm font-semibold tracking-widest uppercase text-blue-400">
+          <p className="mt-6 text-sm font-semibold tracking-widest uppercase text-white">
             — Founder
           </p>
         </motion.div>

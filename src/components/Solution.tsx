@@ -35,8 +35,8 @@ export function Solution() {
           >
             <div className="space-y-4">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Proactive Intelligence.</h2>
-              <p className="text-xl text-blue-400 font-medium">Empowering proactive care through technology.</p>
-              <p className="text-lg text-foreground leading-relaxed">
+              <p className="text-xl text-white font-medium">Empowering proactive care through technology.</p>
+              <p className="text-lg text-white leading-relaxed">
                 Using AI/ML models, the platform analyzes trends in the patient’s health data, provides personalized health insights, and recommends when a patient should seek medical consultation or further evaluation.
               </p>
             </div>
@@ -51,8 +51,8 @@ export function Solution() {
                   transition={{ delay: 0.2 + idx * 0.1 }}
                   className="flex flex-col gap-2"
                 >
-                  <h3 className="font-semibold text-lg">{feature.title}</h3>
-                  <p className="text-foreground text-sm md:text-base leading-relaxed">{feature.description}</p>
+                  <h3 className="font-semibold text-lg text-white">{feature.title}</h3>
+                  <p className="text-white text-sm md:text-base leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -82,14 +82,14 @@ export function Solution() {
                 </svg>
               </div>
               <div className="h-32 bg-white/5 rounded-xl border border-white/5 p-4 flex flex-col justify-end">
-                <div className="w-12 h-12 rounded-full bg-indigo-500/20 mb-auto flex items-center justify-center text-indigo-400">
+                <div className="w-12 h-12 rounded-full bg-indigo-500/20 mb-auto flex items-center justify-center text-white">
                   <Brain className="w-6 h-6" />
                 </div>
                 <div className="h-4 w-20 bg-white/10 rounded mt-2" />
                 <div className="h-3 w-16 bg-white/5 rounded mt-2" />
               </div>
               <div className="h-32 bg-white/5 rounded-xl border border-white/5 p-4 flex flex-col justify-end">
-                <div className="w-12 h-12 rounded-full bg-rose-500/20 mb-auto flex items-center justify-center text-rose-400">
+                <div className="w-12 h-12 rounded-full bg-rose-500/20 mb-auto flex items-center justify-center text-white">
                   <HeartPulse className="w-6 h-6" />
                 </div>
                 <div className="h-4 w-24 bg-white/10 rounded mt-2" />

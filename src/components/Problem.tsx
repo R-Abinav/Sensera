@@ -26,8 +26,8 @@ export function Problem() {
           viewport={{ once: true }}
           className="text-center space-y-4 max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">The Problem We Are Solving</h2>
-          <p className="text-lg text-foreground leading-relaxed">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">The Problem We Are Solving</h2>
+          <p className="text-lg text-white leading-relaxed">
             Our platform addresses delays in recognising deterioration of patients' health status and promptly notifies family members and primary responders to ensure the patient gets timely medical attention.
           </p>
         </motion.div>
@@ -43,10 +43,10 @@ export function Problem() {
             >
               <Card className="h-full bg-background/50 backdrop-blur-sm border-white/5 hover:border-white/20 transition-colors">
                 <CardHeader>
-                  <CardTitle className="text-xl">{problem.title}</CardTitle>
+                  <CardTitle className="text-xl text-white">{problem.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-foreground">{problem.description}</p>
+                  <p className="text-white">{problem.description}</p>
                 </CardContent>
               </Card>
             </motion.div>

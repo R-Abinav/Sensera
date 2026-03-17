@@ -9,7 +9,7 @@ import { AuroraBackground } from "./components/ui/AuroraBackground";
 
 function App() {
   return (
-    <AuroraBackground className="dark antialiased text-foreground selection:bg-blue-500/30">
+    <AuroraBackground className="dark antialiased text-white selection:bg-blue-500/30 bg-gradient-to-br from-[#020617] via-[#0a0f1c] to-[#020215] bg-fixed">
       <Navbar />
       <main>
         <Hero />
