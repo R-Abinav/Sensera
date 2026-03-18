@@ -24,7 +24,7 @@ export function FounderQuote() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-black pt-[50vh] pb-[50vh]"
+      className="relative w-full bg-transparent pt-[50vh] pb-[50vh]"
     >
       <div className="sticky top-0 min-h-screen w-full flex flex-col justify-center px-6 md:px-16 lg:px-24">
         <motion.div
@@ -44,7 +44,7 @@ export function FounderQuote() {
                   delay: i * 0.25,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="font-light italic text-[1.5rem] md:text-[2rem] leading-[1.6] text-white"
+                className="font-light italic text-[1.5rem] md:text-[2rem] leading-[1.6] text-black"
               >
                 {text}
               </motion.p>
@@ -61,7 +61,7 @@ export function FounderQuote() {
               }}
               className="w-full text-right mt-8"
             >
-              <p className="font-['Cormorant_SC'] font-normal text-[1.3rem] tracking-[0.25em] uppercase text-white inline-block">
+              <p className="font-['Cormorant_SC'] font-normal text-[1.3rem] tracking-[0.25em] uppercase text-black inline-block">
                 — Aditya Sahoo, Founder
               </p>
             </motion.div>

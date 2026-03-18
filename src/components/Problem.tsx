@@ -20,7 +20,7 @@ export function Problem() {
   ];
 
   return (
-    <section id="problem" className="py-24 px-6 relative bg-black">
+    <section id="problem" className="py-24 px-6 relative bg-transparent">
       <div className="max-w-6xl mx-auto space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,10 +28,10 @@ export function Problem() {
           viewport={{ once: true }}
           className="text-center space-y-6 max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-black">
             The Problem We Are Solving
           </h2>
-          <p className="text-[1.15rem] leading-[1.9] text-white/80 font-normal">
+          <p className="text-[1.15rem] leading-[1.9] text-black/80 font-normal">
             Our platform addresses delays in recognising deterioration of
             patients' health status and promptly notifies family members and
             primary responders to ensure the patient gets timely medical
@@ -49,10 +49,10 @@ export function Problem() {
               transition={{ delay: idx * 0.2 }}
               className="flex flex-col gap-4 text-center md:text-left"
             >
-              <h3 className="text-2xl font-semibold text-white">
+              <h3 className="text-2xl font-semibold text-black">
                 {problem.title}
               </h3>
-              <p className="text-[1.15rem] leading-[1.9] text-white/80 font-normal">
+              <p className="text-[1.15rem] leading-[1.9] text-black/80 font-normal">
                 {problem.description}
               </p>
             </motion.div>

@@ -33,7 +33,7 @@ const timelineData = [
     phase: "Phase 2",
     title: "Parallel Development",
     duration: "1–3 months",
-    status: "upcoming",
+    status: "ongoing",
     image: img2,
     sections: [
       {
@@ -132,12 +132,27 @@ const TimelineNode = ({ status }: { status: string }) => {
   if (status === "completed") {
     return (
       <div
-        className="relative w-[14px] h-[14px] rounded-full border border-white bg-black flex items-center justify-center z-20"
+        className="relative w-[14px] h-[14px] rounded-full border border-black bg-white flex items-center justify-center z-20"
         style={{
-          boxShadow: "0 0 16px rgba(255,255,255,0.9)",
+          boxShadow: "0 0 16px rgba(0,0,0,0.3)",
         }}
       >
-        <Check className="w-2.5 h-2.5 text-white" strokeWidth={4} />
+        <Check className="w-2.5 h-2.5 text-black" strokeWidth={4} />
+      </div>
+    );
+  }
+
+  if (status === "ongoing") {
+    return (
+      <div
+        className="relative w-[14px] h-[14px] rounded-full border border-black bg-white flex items-center justify-center z-20"
+        style={{ boxShadow: "0 0 16px rgba(0,0,0,0.3)" }}
+      >
+        <motion.div
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          className="w-[5px] h-[5px] rounded-full bg-black"
+        />
       </div>
     );
   }
@@ -147,15 +162,15 @@ const TimelineNode = ({ status }: { status: string }) => {
       initial={{
         scale: 1,
         boxShadow: "none",
-        borderColor: "rgba(255,255,255,0.3)",
+        borderColor: "rgba(0,0,0,0.3)",
       }}
       whileInView={{
         scale: 1.2,
-        boxShadow: "0 0 16px rgba(255,255,255,0.9)",
-        borderColor: "rgba(255,255,255,1)",
+        boxShadow: "0 0 16px rgba(0,0,0,0.3)",
+        borderColor: "rgba(0,0,0,1)",
       }}
       viewport={{ once: true, margin: "-50% 0px" }}
-      className="relative w-[14px] h-[14px] rounded-full border bg-black flex items-center justify-center z-20 transition-all duration-300"
+      className="relative w-[14px] h-[14px] rounded-full border bg-white flex items-center justify-center z-20 transition-all duration-300"
     />
   );
 };
@@ -171,10 +186,10 @@ export function Timeline() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" className="py-24 px-6 relative bg-black">
+    <section id="timeline" className="py-24 px-6 relative bg-transparent">
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-6 mb-24 md:mb-32">
-          <h2 className="font-['Cormorant_SC'] text-5xl md:text-[4rem] tracking-[0.3em] uppercase text-white font-medium">
+          <h2 className="font-['Cormorant_SC'] text-5xl md:text-[4rem] tracking-[0.3em] uppercase text-black font-medium">
             Development Timeline
           </h2>
         </div>
@@ -184,14 +199,14 @@ export function Timeline() {
           className="relative w-full max-w-5xl mx-auto pb-24"
         >
           {/* Base Line */}
-          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[1px] bg-white/[0.15] -translate-x-1/2 z-0" />
+          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[1px] bg-black/[0.15] -translate-x-1/2 z-0" />
 
           {/* Glowing Animated Line */}
           <motion.div
-            className="absolute left-[24px] md:left-1/2 top-0 w-[1px] bg-white -translate-x-1/2 origin-top z-10"
+            className="absolute left-[24px] md:left-1/2 top-0 w-[1px] bg-black -translate-x-1/2 origin-top z-10"
             style={{
               height: lineHeight,
-              boxShadow: "0 0 12px rgba(255,255,255,0.8)",
+              boxShadow: "0 0 12px rgba(0,0,0,0.4)",
             }}
           />
 
@@ -226,7 +241,7 @@ export function Timeline() {
                     }`}
                   >
                     <div className="flex flex-col gap-1 mb-8 w-full max-w-lg">
-                      <h3 className="font-semibold text-[2rem] text-white mb-3 tracking-normal">
+                      <h3 className="font-semibold text-[2rem] text-black mb-3 tracking-normal">
                         {item.phase} — {item.title}
                       </h3>
                       <div
@@ -234,12 +249,12 @@ export function Timeline() {
                           isEven ? "md:justify-end" : "md:justify-start"
                         }`}
                       >
-                        <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-[#4EECD4] border border-[#4EECD4]/30 rounded-full px-4 py-1.5 bg-white/5">
+                        <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-teal-700 border border-teal-700/30 rounded-full px-4 py-1.5 bg-black/5">
                           {item.duration}
                         </span>
                         {item.status === "completed" && (
                           <>
-                            <span className="text-white/30 hidden md:inline">
+                            <span className="text-black/30 hidden md:inline">
                               ·
                             </span>
                             <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-black bg-[#FFD700] px-3 py-1 flex items-center gap-1.5 ml-2 font-semibold">
@@ -258,10 +273,10 @@ export function Timeline() {
                     >
                       {item.sections.map((sec, idx) => (
                         <div key={idx} className={sec.marginTop ? "mt-10" : ""}>
-                          <span className="block font-['Cormorant_SC'] uppercase text-[0.8rem] md:text-[0.85rem] tracking-[0.3em] text-[#4EECD4] mb-2 font-semibold">
+                          <span className="block font-['Cormorant_SC'] uppercase text-[0.8rem] md:text-[0.85rem] tracking-[0.3em] text-teal-700 mb-2 font-semibold">
                             {sec.label}
                           </span>
-                          <p className="font-light text-[1.15rem] leading-[1.85] text-white/[0.85]">
+                          <p className="font-light text-[1.15rem] leading-[1.85] text-black/[0.85]">
                             {sec.text}
                           </p>
                         </div>

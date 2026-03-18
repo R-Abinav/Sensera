@@ -122,7 +122,7 @@
     outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
   }
   body {
-    background-color: #000000;
+    background-color: #ffffff;
     color: var(--foreground);
     min-height: 100vh;
   }

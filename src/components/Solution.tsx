@@ -28,7 +28,7 @@ export function Solution() {
   return (
     <section
       id="solution"
-      className="py-24 px-6 relative overflow-hidden bg-black"
+      className="py-24 px-6 relative overflow-hidden bg-transparent"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -39,13 +39,13 @@ export function Solution() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+              <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-black mb-6">
                 Proactive Intelligence.
               </h2>
-              <p className="text-[1.15rem] leading-[1.85] text-white/[0.85] font-normal">
+              <p className="text-[1.15rem] leading-[1.85] text-black/[0.85] font-normal">
                 Empowering proactive care through technology.
               </p>
-              <p className="text-[1.15rem] leading-[1.85] text-white/[0.85] font-normal">
+              <p className="text-[1.15rem] leading-[1.85] text-black/[0.85] font-normal">
                 Using AI/ML models, the platform analyzes trends in the
                 patient’s health data, provides personalized health insights,
                 and recommends when a patient should seek medical consultation
@@ -63,10 +63,10 @@ export function Solution() {
                   transition={{ delay: 0.2 + idx * 0.1 }}
                   className="flex flex-col gap-2"
                 >
-                  <h3 className="font-semibold text-xl text-white mb-1">
+                  <h3 className="font-semibold text-xl text-black mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-white/[0.85] text-[1.15rem] leading-[1.85] font-normal">
+                  <p className="text-black/[0.85] text-[1.15rem] leading-[1.85] font-normal">
                     {feature.description}
                   </p>
                 </motion.div>

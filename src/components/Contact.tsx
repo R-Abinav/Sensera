@@ -39,26 +39,26 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full py-24 md:py-32 bg-black"
+      className="relative w-full py-24 md:py-32 bg-transparent"
     >
       <div className="max-w-3xl mx-auto px-6 w-full flex flex-col items-center">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-[#4EECD4] text-4xl md:text-5xl font-bold uppercase tracking-[0.15em]">
+          <h2 className="text-teal-700 text-4xl md:text-5xl font-bold uppercase tracking-[0.15em]">
             Get In Touch
           </h2>
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-normal">
+          <p className="text-black/80 text-lg md:text-xl max-w-2xl mx-auto font-normal">
             Whether you're a clinician, patient, or partner — we'd love to hear
             from you.
           </p>
         </div>
 
-        <div className="w-full bg-[rgba(30,30,30,0.6)] backdrop-blur-[16px] border border-[#333333] p-8 md:p-12 rounded-[16px] shadow-2xl relative">
+        <div className="w-full bg-black border border-black p-8 md:p-12 rounded-[16px] shadow-2xl relative">
           <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full">
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex flex-col gap-2 w-full">
                 <label
                   htmlFor="name"
-                  className="text-sm font-semibold text-white/90 tracking-wide uppercase"
+                  className="text-sm font-semibold text-white/70 tracking-wide uppercase"
                 >
                   Name
                 </label>
@@ -69,14 +69,14 @@ export function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-[#1e1e1e]/50 border border-[#444444] rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-[#4EECD4] focus:ring-1 focus:ring-[#4EECD4] transition-all"
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all"
                   placeholder="John Doe"
                 />
               </div>
               <div className="flex flex-col gap-2 w-full">
                 <label
                   htmlFor="email"
-                  className="text-sm font-semibold text-white/90 tracking-wide uppercase"
+                  className="text-sm font-semibold text-white/70 tracking-wide uppercase"
                 >
                   Email
                 </label>
@@ -87,7 +87,7 @@ export function Contact() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-[#1e1e1e]/50 border border-[#444444] rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-[#4EECD4] focus:ring-1 focus:ring-[#4EECD4] transition-all"
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all"
                   placeholder="john@example.com"
                 />
               </div>
@@ -96,7 +96,7 @@ export function Contact() {
             <div className="flex flex-col gap-2 w-full">
               <label
                 htmlFor="message"
-                className="text-sm font-semibold text-white/90 tracking-wide uppercase"
+                className="text-sm font-semibold text-black/90 tracking-wide uppercase"
               >
                 Message
               </label>
@@ -107,7 +107,7 @@ export function Contact() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-[#1e1e1e]/50 border border-[#444444] rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-[#4EECD4] focus:ring-1 focus:ring-[#4EECD4] transition-all resize-y"
+                className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all resize-y"
                 placeholder="How can we help you?"
               />
             </div>

@@ -52,11 +52,11 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
 
   return (
     <div 
-      className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center pointer-events-none transition-opacity duration-500 ease-in-out"
+      className="fixed inset-0 z-[9999] bg-transparent flex flex-col items-center justify-center pointer-events-none transition-opacity duration-500 ease-in-out"
       style={{ opacity: overlayOpacity }}
     >
       <h1 
-        className="font-['Cormorant_Garamond'] font-light text-[15vw] md:text-[12vw] tracking-[0.3em] text-white uppercase transition-opacity duration-[600ms] ease-in-out ml-[0.3em]"
+        className="font-['Cormorant_Garamond'] font-light text-[15vw] md:text-[12vw] tracking-[0.3em] text-black uppercase transition-opacity duration-[600ms] ease-in-out ml-[0.3em]"
         style={{ opacity: textOpacity }}
       >
         {displayedText}

@@ -3,12 +3,12 @@ import heartBg from "../assets/heart_bg.jpg";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-black">
+    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-transparent">
       {/* Gentle Breathing Background Heart */}
       <motion.img
         src={heartBg}
         alt="Background Heart"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[60vh] md:h-[70vh] w-auto object-contain z-0 mix-blend-screen"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[60vh] md:h-[70vh] w-auto object-contain z-0 mix-blend-multiply"
         initial={{ opacity: 0 }}
         animate={{
           opacity: 0.45,
@@ -27,12 +27,12 @@ export function Hero() {
           className="w-full flex flex-col items-center"
         >
           {/* Main Brand Wordmark */}
-          <h1 className="font-light text-[15vw] md:text-[12vw] tracking-[0.2em] md:tracking-[0.3em] text-white leading-none ml-[0.3em] uppercase">
+          <h1 className="font-light text-[15vw] md:text-[12vw] tracking-[0.2em] md:tracking-[0.3em] text-black leading-none ml-[0.3em] uppercase">
             Sensera
           </h1>
 
           {/* Tagline */}
-          <p className="font-['Cormorant_SC'] font-normal text-lg md:text-xl lg:text-2xl tracking-[0.3em] md:tracking-[0.4em] text-[#4EECD4] uppercase mt-4 md:mt-8 ml-[0.5em]">
+          <p className="font-['Cormorant_SC'] font-normal text-lg md:text-xl lg:text-2xl tracking-[0.3em] md:tracking-[0.4em] text-teal-700 uppercase mt-4 md:mt-8 ml-[0.5em]">
             Predict. Prevent. Protect.
           </p>
         </motion.div>
@@ -44,10 +44,10 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="max-w-[750px] px-6 mt-16 md:mt-24 space-y-8 flex flex-col items-center"
         >
-          <h2 className="text-4xl md:text-6xl font-semibold text-white">
+          <h2 className="text-4xl md:text-6xl font-semibold text-black">
             Care before it's too late.
           </h2>
-          <p className="font-normal text-[1.25rem] leading-[1.8] tracking-normal text-white/[0.85] text-center">
+          <p className="font-normal text-[1.25rem] leading-[1.8] tracking-normal text-black/[0.85] text-center">
             Our platform addresses delays in recognising deterioration of
             patients' health status, and promptly notifies family members and
             primary responders to ensure the patient receives timely medical
