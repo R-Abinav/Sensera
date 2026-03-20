@@ -103,14 +103,10 @@
 
   @keyframes aurora {
     from {
-      background-position:
-        50% 50%,
-        50% 50%;
+      background-position: 50% 50%, 50% 50%;
     }
     to {
-      background-position:
-        350% 50%,
-        350% 50%;
+      background-position: 350% 50%, 350% 50%;
     }
   }
 }
@@ -129,15 +125,5 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-  }
-}
-
-/* 
-  Mobile Blocker Scroll Lock
-  Hides overflow on body if screen width < 768px
-*/
-@media (max-width: 767px) {
-  body {
-    overflow: hidden;
   }
 }
