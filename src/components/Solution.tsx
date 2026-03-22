@@ -28,10 +28,10 @@ export function Solution() {
   return (
     <section
       id="solution"
-      className="py-24 px-6 relative overflow-hidden bg-transparent"
+      className="py-16 md:py-24 px-6 relative overflow-hidden bg-transparent"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -39,21 +39,21 @@ export function Solution() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-black mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight text-black mb-6">
                 Proactive Intelligence.
               </h2>
-              <p className="text-[1.15rem] leading-[1.85] text-black/[0.85] font-normal">
+              <p className="text-[1rem] sm:text-[1.15rem] leading-[1.85] text-black/[0.85] font-normal">
                 Empowering proactive care through technology.
               </p>
-              <p className="text-[1.15rem] leading-[1.85] text-black/[0.85] font-normal">
+              <p className="text-[1rem] sm:text-[1.15rem] leading-[1.85] text-black/[0.85] font-normal">
                 Using AI/ML models, the platform analyzes trends in the
-                patient’s health data, provides personalized health insights,
+                patient's health data, provides personalized health insights,
                 and recommends when a patient should seek medical consultation
                 or further evaluation.
               </p>
             </div>
 
-            <div className="space-y-8 mt-12">
+            <div className="space-y-6 md:space-y-8 mt-8 md:mt-12">
               {features.map((feature, idx) => (
                 <motion.div
                   key={idx}
@@ -63,10 +63,10 @@ export function Solution() {
                   transition={{ delay: 0.2 + idx * 0.1 }}
                   className="flex flex-col gap-2"
                 >
-                  <h3 className="font-semibold text-xl text-black mb-1">
+                  <h3 className="font-semibold text-lg sm:text-xl text-black mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-black/[0.85] text-[1.15rem] leading-[1.85] font-normal">
+                  <p className="text-black/[0.85] text-[1rem] sm:text-[1.15rem] leading-[1.85] font-normal">
                     {feature.description}
                   </p>
                 </motion.div>
@@ -74,17 +74,22 @@ export function Solution() {
             </div>
           </motion.div>
 
+          {/* Image - hidden on small mobile, shown from sm up */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full h-full flex items-center justify-center pt-12 lg:pt-0"
+            className="w-full h-full flex items-center justify-center pt-6 lg:pt-0 overflow-hidden"
           >
             <img
               src={stethBg}
               alt="Stethoscope"
-              className="w-full max-w-none object-contain bg-transparent drop-shadow-2xl"
-              style={{ transform: "scale(1.4)", transformOrigin: "center left", maxHeight: "1000px" }}
+              className="w-full max-w-[320px] sm:max-w-none object-contain bg-transparent drop-shadow-2xl"
+              style={{
+                transform: "scale(1.2)",
+                transformOrigin: "center center",
+                maxHeight: "700px",
+              }}
             />
           </motion.div>
         </div>

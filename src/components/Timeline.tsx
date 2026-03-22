@@ -15,18 +15,12 @@ const timelineData = [
     status: "completed",
     image: img1,
     sections: [
-      {
-        label: "Goal",
-        text: "Define the product and organize teams",
-      },
+      { label: "Goal", text: "Define the product and organize teams" },
       {
         label: "Tasks",
         text: "Finalize problem statement · Define core features: continuous health monitoring, escalation alerts to family and responders, AI health insights · Assign teams: Medical (clinical validation), Software (platform and AI models), Hardware (wearable prototype) · Identify existing wearable APIs",
       },
-      {
-        label: "Deliverable",
-        text: "Concept note + product roadmap",
-      },
+      { label: "Deliverable", text: "Concept note + product roadmap" },
     ],
   },
   {
@@ -36,18 +30,12 @@ const timelineData = [
     status: "ongoing",
     image: img2,
     sections: [
-      {
-        label: "Software Track — Goal",
-        text: "Build the first software platform",
-      },
+      { label: "Software Track — Goal", text: "Build the first software platform" },
       {
         label: "Features",
         text: "Wearable API integration · Health monitoring dashboard · AI anomaly detection · Escalation alerts to caregivers and responders · Early recommendation system",
       },
-      {
-        label: "Deliverable",
-        text: "Software MVP",
-      },
+      { label: "Deliverable", text: "Software MVP" },
       {
         label: "Hardware Track — Goal",
         text: "Begin wearable development",
@@ -57,10 +45,7 @@ const timelineData = [
         label: "Tasks",
         text: "Sensor selection · Prototype architecture · Initial hardware design · Integration planning",
       },
-      {
-        label: "Deliverable",
-        text: "Hardware prototype design",
-      },
+      { label: "Deliverable", text: "Hardware prototype design" },
     ],
   },
   {
@@ -70,18 +55,12 @@ const timelineData = [
     status: "upcoming",
     image: img3,
     sections: [
-      {
-        label: "Software",
-        text: "Improve AI models · Test alert systems · Beta testing with users",
-      },
+      { label: "Software", text: "Improve AI models · Test alert systems · Beta testing with users" },
       {
         label: "Hardware",
         text: "Build first functional wearable prototype · Sensor calibration · Power optimization",
       },
-      {
-        label: "Deliverable",
-        text: "Beta software + prototype wearable",
-      },
+      { label: "Deliverable", text: "Beta software + prototype wearable" },
     ],
   },
   {
@@ -91,18 +70,12 @@ const timelineData = [
     status: "upcoming",
     image: img4,
     sections: [
-      {
-        label: "Goal",
-        text: "Combine software platform with proprietary wearable",
-      },
+      { label: "Goal", text: "Combine software platform with proprietary wearable" },
       {
         label: "Tasks",
         text: "Integrate device data with platform · Optimize real-time monitoring · Conduct pilot testing",
       },
-      {
-        label: "Deliverable",
-        text: "Integrated system",
-      },
+      { label: "Deliverable", text: "Integrated system" },
     ],
   },
   {
@@ -112,18 +85,12 @@ const timelineData = [
     status: "upcoming",
     image: img5,
     sections: [
-      {
-        label: "Goal",
-        text: "Full product launch",
-      },
+      { label: "Goal", text: "Full product launch" },
       {
         label: "Features",
         text: "Software platform · Proprietary wearable · AI-driven monitoring · Caregiver and responder alert system",
       },
-      {
-        label: "Deliverable",
-        text: "Complete health monitoring ecosystem",
-      },
+      { label: "Deliverable", text: "Complete health monitoring ecosystem" },
     ],
   },
 ];
@@ -133,9 +100,7 @@ const TimelineNode = ({ status }: { status: string }) => {
     return (
       <div
         className="relative w-[14px] h-[14px] rounded-full border border-black bg-white flex items-center justify-center z-20"
-        style={{
-          boxShadow: "0 0 16px rgba(0,0,0,0.3)",
-        }}
+        style={{ boxShadow: "0 0 16px rgba(0,0,0,0.3)" }}
       >
         <Check className="w-2.5 h-2.5 text-black" strokeWidth={4} />
       </div>
@@ -159,11 +124,7 @@ const TimelineNode = ({ status }: { status: string }) => {
 
   return (
     <motion.div
-      initial={{
-        scale: 1,
-        boxShadow: "none",
-        borderColor: "rgba(0,0,0,0.3)",
-      }}
+      initial={{ scale: 1, boxShadow: "none", borderColor: "rgba(0,0,0,0.3)" }}
       whileInView={{
         scale: 1.2,
         boxShadow: "0 0 16px rgba(0,0,0,0.3)",
@@ -186,97 +147,83 @@ export function Timeline() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" className="py-24 px-6 relative bg-transparent">
+    <section id="timeline" className="py-16 md:py-24 px-4 sm:px-6 relative bg-transparent">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center space-y-6 mb-24 md:mb-32">
-          <h2 className="font-['Cormorant_SC'] text-5xl md:text-[4rem] tracking-[0.3em] uppercase text-black font-medium">
+        <div className="text-center space-y-6 mb-16 md:mb-32">
+          <h2 className="font-['Cormorant_SC'] text-4xl sm:text-5xl md:text-[4rem] tracking-[0.2em] md:tracking-[0.3em] uppercase text-black font-medium">
             Development Timeline
           </h2>
         </div>
 
-        <div
-          ref={containerRef}
-          className="relative w-full max-w-5xl mx-auto pb-24"
-        >
-          {/* Base Line */}
-          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[1px] bg-black/[0.15] -translate-x-1/2 z-0" />
+        <div ref={containerRef} className="relative w-full max-w-5xl mx-auto pb-16 md:pb-24">
+          {/* Base Line — left on mobile, center on desktop */}
+          <div className="absolute left-[6px] md:left-1/2 top-0 bottom-0 w-[1px] bg-black/[0.15] -translate-x-1/2 z-0" />
 
           {/* Glowing Animated Line */}
           <motion.div
-            className="absolute left-[24px] md:left-1/2 top-0 w-[1px] bg-black -translate-x-1/2 origin-top z-10"
-            style={{
-              height: lineHeight,
-              boxShadow: "0 0 12px rgba(0,0,0,0.4)",
-            }}
+            className="absolute left-[6px] md:left-1/2 top-0 w-[1px] bg-black -translate-x-1/2 origin-top z-10"
+            style={{ height: lineHeight, boxShadow: "0 0 12px rgba(0,0,0,0.4)" }}
           />
 
-          <div className="flex flex-col gap-32 md:gap-40 w-full relative z-20">
+          <div className="flex flex-col gap-20 md:gap-40 w-full relative z-20">
             {timelineData.map((item, index) => {
               const isEven = index % 2 === 0;
 
               return (
                 <div
                   key={index}
-                  className={`relative flex flex-col items-start w-full justify-between gap-12 md:gap-0 ${
-                    isEven
-                      ? "md:flex-row"
-                      : "md:flex-row-reverse md:items-center"
+                  className={`relative flex flex-col items-start w-full justify-between gap-8 md:gap-0 ${
+                    isEven ? "md:flex-row" : "md:flex-row-reverse md:items-center"
                   }`}
                 >
-                  {/* Node */}
-                  <div className="absolute left-[24px] md:left-1/2 top-6 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 z-20 pt-1 md:pt-0">
+                  {/* Node — always left on mobile */}
+                  <div className="absolute left-[6px] md:left-1/2 top-1 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 z-20">
                     <TimelineNode status={item.status} />
                   </div>
 
                   {/* Content */}
                   <motion.div
-                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                    initial={{ opacity: 0, x: isEven ? -30 : 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-30% 0px" }}
+                    viewport={{ once: true, margin: "-20% 0px" }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className={`w-full md:w-1/2 pl-16 md:pl-0 flex flex-col ${
+                    className={`w-full md:w-1/2 pl-8 md:pl-0 flex flex-col ${
                       isEven
                         ? "md:pr-24 md:items-end text-left md:text-right"
                         : "md:pl-24 md:items-start text-left"
                     }`}
                   >
-                    <div className="flex flex-col gap-1 mb-8 w-full max-w-lg">
-                      <h3 className="font-semibold text-[2rem] text-black mb-3 tracking-normal">
+                    <div className="flex flex-col gap-1 mb-6 md:mb-8 w-full max-w-lg">
+                      <h3 className="font-semibold text-[1.4rem] sm:text-[2rem] text-black mb-2 md:mb-3 tracking-normal leading-tight">
                         {item.phase} — {item.title}
                       </h3>
                       <div
-                        className={`flex items-center gap-3 ${
+                        className={`flex flex-wrap items-center gap-2 md:gap-3 ${
                           isEven ? "md:justify-end" : "md:justify-start"
                         }`}
                       >
-                        <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-teal-700 border border-teal-700/30 rounded-full px-4 py-1.5 bg-black/5">
+                        <span className="font-['Cormorant_SC'] uppercase text-xs tracking-[0.2em] text-teal-700 border border-teal-700/30 rounded-full px-3 py-1 bg-black/5">
                           {item.duration}
                         </span>
                         {item.status === "completed" && (
-                          <>
-                            <span className="text-black/30 hidden md:inline">
-                              ·
-                            </span>
-                            <span className="font-['Cormorant_SC'] uppercase text-xs md:text-sm tracking-[0.2em] text-black bg-[#FFD700] px-3 py-1 flex items-center gap-1.5 ml-2 font-semibold">
-                              <Check className="w-3.5 h-3.5 text-black" strokeWidth={3} />{" "}
-                              Completed
-                            </span>
-                          </>
+                          <span className="font-['Cormorant_SC'] uppercase text-xs tracking-[0.2em] text-black bg-[#FFD700] px-3 py-1 flex items-center gap-1.5 font-semibold">
+                            <Check className="w-3 h-3 text-black" strokeWidth={3} /> Completed
+                          </span>
                         )}
                       </div>
                     </div>
 
                     <div
-                      className={`space-y-6 max-w-lg w-full ${
+                      className={`space-y-5 max-w-lg w-full ${
                         isEven ? "md:text-right" : "md:text-left"
                       }`}
                     >
                       {item.sections.map((sec, idx) => (
-                        <div key={idx} className={sec.marginTop ? "mt-10" : ""}>
-                          <span className="block font-['Cormorant_SC'] uppercase text-[0.8rem] md:text-[0.85rem] tracking-[0.3em] text-teal-700 mb-2 font-semibold">
+                        <div key={idx} className={sec.marginTop ? "mt-6 md:mt-10" : ""}>
+                          <span className="block font-['Cormorant_SC'] uppercase text-[0.75rem] md:text-[0.85rem] tracking-[0.3em] text-teal-700 mb-1 md:mb-2 font-semibold">
                             {sec.label}
                           </span>
-                          <p className="font-light text-[1.15rem] leading-[1.85] text-black/[0.85]">
+                          <p className="font-light text-[0.95rem] sm:text-[1.15rem] leading-[1.85] text-black/[0.85]">
                             {sec.text}
                           </p>
                         </div>
@@ -284,7 +231,7 @@ export function Timeline() {
                     </div>
                   </motion.div>
 
-                  {/* Image */}
+                  {/* Image — desktop only */}
                   <motion.div
                     initial={{ opacity: 0, x: isEven ? 50 : -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -298,11 +245,11 @@ export function Timeline() {
                       src={item.image}
                       alt={`${item.phase} visual`}
                       className="w-full object-contain bg-transparent relative drop-shadow-2xl"
-                      style={{ 
+                      style={{
                         maxHeight: index === 1 ? "900px" : "500px",
                         clipPath: index >= 2 ? "inset(0 0 8% 0)" : "none",
                         transform: index === 1 ? "scale(1.5) translateX(10%)" : "none",
-                        transformOrigin: index === 1 ? "center right" : "center"
+                        transformOrigin: index === 1 ? "center right" : "center",
                       }}
                     />
                   </motion.div>

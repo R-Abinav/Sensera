@@ -5,7 +5,6 @@ import imgFounder from "../assets/img_founder.png";
 export function FounderQuote() {
   const containerRef = useRef<HTMLElement>(null);
 
-  // For the outgoing fade out when scrolling past
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -24,15 +23,15 @@ export function FounderQuote() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-transparent pt-[50vh] pb-[50vh]"
+      className="relative w-full bg-transparent pt-[20vh] md:pt-[50vh] pb-[20vh] md:pb-[50vh]"
     >
-      <div className="sticky top-0 min-h-screen w-full flex flex-col justify-center px-6 md:px-16 lg:px-24">
+      <div className="sticky top-0 min-h-screen w-full flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 md:py-0">
         <motion.div
           style={{ opacity: fadeOutOpacity, y: fadeOutY }}
-          className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16 lg:gap-24"
+          className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16 lg:gap-24"
         >
           {/* Text Container */}
-          <div className="max-w-[680px] w-full flex flex-col items-start text-left space-y-6">
+          <div className="max-w-[680px] w-full flex flex-col items-start text-left space-y-4 md:space-y-6">
             {lines.map((text, i) => (
               <motion.p
                 key={i}
@@ -44,7 +43,7 @@ export function FounderQuote() {
                   delay: i * 0.25,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="font-light italic text-[1.5rem] md:text-[2rem] leading-[1.6] text-black"
+                className="font-light italic text-[1.15rem] sm:text-[1.35rem] md:text-[2rem] leading-[1.6] text-black"
               >
                 {text}
               </motion.p>
@@ -59,9 +58,9 @@ export function FounderQuote() {
                 delay: lines.length * 0.25 + 0.5,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="w-full text-right mt-8"
+              className="w-full text-right mt-4 md:mt-8"
             >
-              <p className="font-['Cormorant_SC'] font-normal text-[1.3rem] tracking-[0.25em] uppercase text-black inline-block">
+              <p className="font-['Cormorant_SC'] font-normal text-[1rem] md:text-[1.3rem] tracking-[0.2em] md:tracking-[0.25em] uppercase text-black inline-block">
                 — Aditya Sahoo, Founder
               </p>
             </motion.div>
@@ -82,7 +81,7 @@ export function FounderQuote() {
             <img
               src={imgFounder}
               alt="Aditya Sahoo, Founder"
-              className="w-full max-w-[400px] lg:max-w-[550px] object-contain rounded-2xl shadow-2xl relative z-10"
+              className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[550px] object-contain rounded-2xl shadow-2xl relative z-10"
               style={{ clipPath: "inset(0 0 8% 0)" }}
             />
           </motion.div>
