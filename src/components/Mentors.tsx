@@ -9,12 +9,6 @@ export function Mentors() {
       bio: "Professor of Pharmacology at Kasturba Medical College, Mangalore. Experienced clinician and educator with a demonstrated history in Clinical Research, Pharmacology, Clinical Trials, and Bioethics.",
       image: "/team/ashok_faculty.jpeg",
       linkedin: "https://www.linkedin.com/in/ashok-s-302a4955/",
-    },{
-name: "Dr. Bharath MS",
-      role: "Faculty Mentor",
-      bio: "",
-      image: "",
-      linkedin: "",
     },
     {
       name: "Dr. Bharath MS",
