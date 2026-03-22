@@ -6,15 +6,15 @@ export function Team() {
     {
       name: "Aditya Sahoo",
       role: "Founder",
-      bio: "",
+      bio: "I'm a third-year MBBS student at KMC, working at the intersection of medicine and innovation. Beyond academics, I’m involved in early-stage startups focused on solving real-world healthcare challenges. I approach problems with a practical mindset and aim to build solutions that make a lasting impact.",
       image: "/team/sahoo.jpeg",
       linkedin: "https://www.linkedin.com/in/aditya-sahoo-8ba0812b9/",
     },
     {
       name: "Aditya BR",
       role: "Co-Founder",
-      bio: "",
-      image: "/team/br.jpeg",
+      bio: "I'm Aditya Bharath, a pre-final year B.Tech (Hons.) Computer Science and Engineering student specializing in AI/ML. I’m passionate about building intelligent systems and turning ideas into real-world, impactful solutions.I enjoy working at the intersection of problem-solving and technology, with a focus on creating efficient, user-centric applications.",
+      image: "/team/br.jpeg", 
       linkedin: "https://www.linkedin.com/in/aditya-bharath-raja-rao/",
     },
     {
